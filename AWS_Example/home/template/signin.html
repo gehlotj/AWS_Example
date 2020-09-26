@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% block title %} User Home Page {% endblock %}
+{% block body %}
+
+
+<div class="w3-panel">
+    <form action='/add' method = "post">
+      <div class="w3-row">
+        <div class="w3-col s3 w3-center">
+          <label> First Name </label>
+          <input type="text", name="first_name" required>
+        </div>
+        <div class="w3-col s3 w3-center">
+          <label> Last Name </label>
+          <input type="text", name="last_name" required>
+        </div>
+        <div class="w3-col s1 w3-center">
+        <label> Grade </label>
+        <input type='number', name='grade', min = "-1", max="12" required>
+        </div>
+        <div class="w3-col s1 w3-center">
+        <button value = "Add"> Add</button>
+        </div>
+      </div>
+    </form>
+</div>
+
+<!-- For headers -->
+<ul class="w3-ul">
+  <li>
+    <div class="w3-row">
+      {%for head in headers %}
+      <div class="w3-col s1 w3-center">
+        {{ head}}
+      </div>
+      {% endfor %}
+    </div>
+  </li>
+</ul>
+
+<!-- For student data -->
+<ul class="w3-ul">
+  {% for student in stu %}
+    <li>
+    <form action='/delete/{{student.id}}', method='post' >
+      <div class="w3-row">
+        <div class="w3-col s1 w3-center">
+          {{ student.id}}
+        </div>
+        <div class="w3-col s1 w3-center">
+          {{ student.first_name }}
+        </div>
+        <div class="w3-col s1 w3-center">
+          {{ student.last_name }}
+        </div>
+        <div class="w3-col s1 w3-center">
+          {{ student.grade }}
+        </div>
+        <div class="w3-col s1 w3-center">
+          <input type='Submit', value='Delete'>
+        </div>
+      </div>
+    </form>
+    </li>
+  {% endfor %}
+</ul>
+
+
+{% endblock %}

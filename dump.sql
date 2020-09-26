@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS SIS;
+USE SIS;
+CREATE TABLE IF NOT EXISTS `USR` (
+	`email`	TEXT,
+	`password`	TEXT,
+	`id`	INTEGER AUTO_INCREMENT,
+	PRIMARY KEY(`id`)
+);
+INSERT INTO USR VALUES('test@gmail.com','test',2);
+CREATE TABLE IF NOT EXISTS `STU` (
+	`id`	INTEGER,
+	`first_name`	TEXT,
+	`last_name`	TEXT,
+	`grade`	INTEGER,
+	PRIMARY KEY(`id`)
+);
+COMMIT;

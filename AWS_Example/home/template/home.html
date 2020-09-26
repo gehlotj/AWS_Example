@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block title %} Homepage {% endblock %}
+{%block body%}
+  <div class="w3-container w3-center">
+    <h2>Login</h2>
+  </div>
+
+  <form class="w3-display-container" action='/signin' method='post' style="height:40%;" >
+    <div class="w3-display-middle" style="width:30%;">
+      <div class="w3-container w3-center">
+        <label class="w3-left-align"><p><strong> Email </strong></p></label>
+        <input class="w3-input w3-light-grey" type='email', id='email' name='email'><br>
+        <label class="w3-left-align"><p><strong> Password </strong></p></label>
+        <input class="w3-input  w3-light-grey"  type='password' id='password' name='password' ><br>
+        <input class="w3-btn w3-blue-grey" type='submit' value = 'Submit'>
+      </div>
+    </div>
+  </form>
+
+{%endblock%}
